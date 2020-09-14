@@ -1,0 +1,34 @@
+<?php
+$list = $artist->getList();
+?>
+<div class = "container-fluid">
+    <h2 class = "text-center"> Liste des vidéos <a href="?p=ajouter" class ="btn btn-success btn-sm ">Ajouter</a></h2>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Artiste</th>
+            <th scope="col">Featuring</th>
+            <th scope="col">Style</th>
+            <th scope="col">Lien</th>
+            <th scope="col">Infos</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($list as $l ){?>
+        <tr>
+            <th scope="row"><?=$l->artist?></th>
+            <td><?=$l->second_artist?></td>
+            <td><?=$l->style?></td>
+            <td><a href="?p=view&id=<?=$l->id_video?>">Voir</a></td>
+            <td><?=$l->infos?></td>
+            <td>
+                <a href="?p=modifier&id=<?=$l->id_video?>" class="btn btn-primary btn-sm">Modifier</a>
+                <a onclick="return confirm('Voulez-vous supprimez ?')" href="controller/supprimer.php?id=<?=$l->id_video?>" class="btn btn-danger btn-sm">Supprimer</a>
+            </td>
+
+        </tr>
+        <?php }?>
+        </tbody>
+    </table>
+</div>

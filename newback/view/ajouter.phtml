@@ -1,0 +1,32 @@
+<h1 class="text-center">Page d'ajout</h1>
+<form class ="container" action="controller/ajout.php" method="POST"  enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="artist">Nom de l'artiste</label>
+        <input type="text" class="form-control" id="artist" name="artist" placeholder="Jean" required>
+    </div>
+    <div class="form-group">
+        <label for="featuring">Nom de l'artiste</label>
+        <input type="text" class="form-control"  id="featuring" name="featuring" placeholder="Jean">
+    </div>
+    <div class="form-group">
+        <label for="style">Style de musique</label>
+        <select  class="form-control"  id="style" name="style" required>
+            <option value="" >Choix du type</option>
+            <option value="rap" >rap</option>
+            <option value="rock" >rock</option>
+            <option value="raprock">raprock</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="lien">Ajouter un fichier</label>
+        <input type="file" class="form-control"  id="lien" name="lien" accept="video/mp4" required>
+    </div>
+    <div class="form-group">
+        <label for="infos">Ajouter un fichier</label>
+        <textarea  class="form-control"  id="infos" name="infos"  required rows="6" ></textarea>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" name="envoyer">Envoyer</button>
+    <a href="?p=accueil" class ="btn btn-danger">Retour</a>
+</form>
