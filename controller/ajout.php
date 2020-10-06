@@ -18,7 +18,7 @@ else {
     $extraction = explode(".", $_FILES["lien"]["name"]);
     $extension = end($extraction);
     $name_file =  round(microtime(true) ) . "." . $extension;
-    $destination = __DIR__ . "/../public/video/";
+    $destination = "../public/video/";
     move_uploaded_file($_FILES["lien"]["tmp_name"], $destination . $name_file);
     $data = array(
         "artist"=> $art,
