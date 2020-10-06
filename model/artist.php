@@ -26,8 +26,13 @@ class Artist {
         global $db;
         $request = $db->prepare("INSERT INTO " . $this->table . "(artist, second_artist, style , filename, infos)
          VALUES(:artist, :second_artist, :style , :filename, :infos)");
-        $request->execute($data);
-        return $request;
+         $request->bindParam(':artist', $data['artist'], PDO::PARAM_STR);
+         $request->bindParam(':second_artist',$data['second_artist'], PDO::PARAM_STR);
+         $request->bindParam(':style',$data['style'], PDO::PARAM_STR);
+         $request->bindParam(':filename',$data['filename'],PDO::PARAM_STR);
+         $request->bindParam(':infos',$data['infos'],PDO::PARAM_STR);
+        $request->execute();
+        return ;
     }
     public function getArtist($id) {
         global $db;
