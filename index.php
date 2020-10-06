@@ -1,8 +1,8 @@
 <?php
-require_once  __DIR__ . "/configs/index.php";
+echo __DIR__;
+/* require_once  __DIR__ . "/configs/index.php";
 require_once  __DIR__ . "/model/bdd.php";
 require_once __DIR__ . "/model/artist.php";
-
 $bdd = new Database();
 $db = $bdd->connect();
 $artist = new Artist();
@@ -18,3 +18,4 @@ else {
 @include("layout/footer.php");
 unset($db);
 unset($_GLOBAL);
+*/
