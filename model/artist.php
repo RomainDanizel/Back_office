@@ -27,7 +27,7 @@ class Artist {
         $request = $db->prepare("INSERT INTO " . $this->table . "(artist, second_artist, style , filename, infos)
          VALUES(:artist, :second_artist, :style , :filename, :infos)");
         $request->execute($data);
-        return ;
+        return $request;
     }
     public function getArtist($id) {
         global $db;
