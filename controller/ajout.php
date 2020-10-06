@@ -29,10 +29,7 @@ else {
     );
 
     $insert = $artist->insertArtist($data);
-    var_dump($insert);
-    var_dump($data);
-    
-    //header("location:../");
+    header("location:../");
 
 }
 include("close.php");
